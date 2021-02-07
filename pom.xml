@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <groupId>org.pavelkonrashov</groupId>
     <artifactId>formula1</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -17,6 +17,7 @@
         <jacoco.version>0.8.6</jacoco.version>
         <mockito.version>3.6.28</mockito.version>
         <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+        <assertj-core.version>3.19.0</assertj-core.version>
     </properties>
 
     <dependencies>
@@ -48,6 +49,13 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj-core.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -66,7 +74,7 @@
                             <archive>
                                 <manifest>
                                     <mainClass>
-                                        org.pavelkondrashov.formula1.CharCounterConsoleApplication
+                                        org.pavelkonrashov.formula1.RaceConsoleApplication
                                     </mainClass>
                                 </manifest>
                             </archive>
@@ -100,8 +108,9 @@
                 <version>${jacoco.version}</version>
                 <configuration>
                     <excludes>
-                        <exclude>org/pavelkondrashov/formula1/CharCounterConsoleApplication.class</exclude>
-                        <exclude>org/pavelkondrashov/formula1/domain/**.*</exclude>
+                        <exclude>org/pavelkonrashov/formula1/RaceConsoleApplication.class</exclude>
+                        <exclude>org/pavelkonrashov/formula1/domain/Racer.class</exclude>
+                        <exclude>org/pavelkonrashov/formula1/domain/RaceData.class</exclude>
                     </excludes>
                 </configuration>
                 <executions>
